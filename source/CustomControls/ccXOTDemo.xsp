@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<div class="row">
+		<div class="col-lg-1" />
+		<div class="col-lg-5">
+			<xe:formTable formTitle="Bluemix Actions">
+				<xe:formRow>
+					<xp:button
+						id="buttonEchoTest"
+						styleClass="btn-primary"
+						value="Send Echo Test to Web Socket Server">
+						<xp:eventHandler
+							event="onclick"
+							submit="false">
+							<xp:this.script><![CDATA[RunWebServiceFunction("1", "");]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:button>
+				</xe:formRow>
+				<xe:formRow>
+					<xp:button
+						id="buttonFetchFeed"
+						styleClass="btn-success"
+						value="Fetch Saved Tweets">
+						<xp:eventHandler
+							event="onclick"
+							submit="false">
+							<xp:this.script><![CDATA[RunWebServiceFunction("2", "");]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:button>
+				</xe:formRow>
+			</xe:formTable>
+		</div>
+		<div class="col-lg-5">
+			<xe:formTable formTitle="Bluemix Timeline">
+				<xe:formRow>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Activity</th>
+								<th width="110px"></th>
+							</tr>
+						</thead>
+						<tbody id="activityBody"></tbody>
+					</table>
+				</xe:formRow>
+			</xe:formTable>
+		</div>
+		<div class="col-lg-1" />
+	</div>
+</xp:view>
